@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>Rabota UA Statistic</title>
+        <link rel="stylesheet" href="css/header.css" />
+        <script src='js/Chart.min.js'></script>
+        <script src="js/jquery.min.js"></script>
+    </head>
+    <body>
+    	<header>
+			<p>Статистика вакансий для программистов. 2015      <a href="http://www.rabota.ua"><img src="img/logorabotaua.png"></a></p>
+            <p>Junior PHP, Java Developers. Front-end Developers</p>
+
+        </header>
+		<p>Количество вакансий. Статистика по городам. <i>IT сфера</i></p>
+        <!-- График -->
+    	<canvas id="countries" width="600" height="400"></canvas>
+        <script>
+        	var countries = document.getElementById('countries').getContext('2d');
+        	var countrieData = {
+        		labels : ["Киев - 2919","Харьков - 628","Львов - 467","Днепропетровск - 357","Одесса - 358","Запорожье - 130","Донецк - 39"],
+        		datasets : [
+        			{
+        				fillColor : "rgba(118, 35, 207, 0.3)",
+        				strokeColor : "#9900CC",
+        				pointColor : "#fff",
+        				pointStrokeColor : "#990066",
+        				data : [2919,628,467,357,358,130,39]
+        			}
+        		]
+        	}
+    		new Chart(countries).Line(countrieData);
+		</script>
+
+		<!-- Круговая диаграмма -->
+        <canvas id="countriescircle" width="200" height="100"></canvas>
+        <script>
+            var countriescircle= document.getElementById("countriescircle").getContext("2d");
+            var pieData = [
+                    {
+                        value : 65,
+                        color : "#878BB6"
+                    },
+                    {
+                        value : 32,
+                        color : "#4ACAB4"
+                    },
+                    {
+                        value : 8,
+                        color : "#FF8153"
+                    },
+                    {
+                        value : 9,
+                        color : "#FF0033"
+                    },
+                    {
+                        value : 2,
+                        color : "#660033"
+                    },
+                    {
+                        value : 9,
+                        color : "#99FF99"
+                    },
+                    {
+                        value : 8,
+                        color : "#003399"
+                    }
+                    ];
+            var pieOptions = {
+                    segmentShowStroke : true,
+                    animateScale : true
+                };
+            new Chart(countriescircle).Pie(pieData, pieOptions);
+        </script>
+        <hr>
+        <!-- Гистограмма -->
+        <p>Количество вакансий. Статистика по профессиям. <i>Front-end Developers</i></p>
+
+        <canvas id="frontend" width="600" height="400"></canvas>
+        <script>
+            var frontend = document.getElementById("frontend").getContext("2d");
+            var barData = {
+                labels : ["Киев - 266","Харьков - 86","Львов - 82","Днепропетровск - 31","Одесса - 43","Запорожье - 27","Донецк - 4"],
+                datasets : [
+                    {
+                        fillColor : "#9999FF",
+                        strokeColor : "#9933CC",
+                        data : [266,86,82,31,43,27, 4]
+                    }
+                ]
+            }
+            new Chart(frontend).Bar(barData);
+        </script>
+        <hr>
+        <p>Количество вакансий. Статистика по профессиям. <i>Junior PHP Developers</i></p>
+        <canvas id="buyers" width="600" height="400"></canvas>
+        <script>
+            var buyers = document.getElementById('buyers').getContext('2d');
+            var buyerData = {
+                labels : ["Киев - 65","Харьков - 32","Львов - 9","Днепропетровск - 8","Одесса - 9","Запорожье - 8","Донецк - 2"],
+                datasets : [
+                    {
+                        fillColor : "rgba(118, 35, 162, 0.3)",
+                        strokeColor : "#9900CC",
+                        pointColor : "#fff",
+                        pointStrokeColor : "#990066",
+                        data : [65,32,9,8,9,8,2]
+                    }
+                ]
+            }
+            new Chart(buyers).Line(buyerData);
+        </script>
+
+        <!-- Круговая диаграмма -->
+        <canvas id="junphp" width="200" height="100"></canvas>
+        <script>
+            var junphp= document.getElementById("junphp").getContext("2d");
+            var pieData = [
+                {
+                    value : 65,
+                    color : "#878BB6"
+                },
+                {
+                    value : 32,
+                    color : "#4ACAB4"
+                },
+                {
+                    value : 9,
+                    color : "#FF8153"
+                },
+                {
+                    value : 8,
+                    color : "#FF0033"
+                },
+                {
+                    value : 9,
+                    color : "#FFFF99"
+                },
+                {
+                    value : 8,
+                    color : "#99FF99"
+                },
+                {
+                    value : 2,
+                    color : "#003399"
+                }
+            ];
+            var pieOptions = {
+                segmentShowStroke : true,
+                animateScale : true
+            };
+            new Chart(junphp).Pie(pieData, pieOptions);
+        </script>
+        <hr>
+        <p>Количество вакансий. Статистика по профессиям. <i>Junior Java Developers</i></p>
+        <canvas id="junjava" width="600" height="400"></canvas>
+        <script>
+            var junjava = document.getElementById('junjava').getContext('2d');
+            var junjavaData = {
+                labels : ["Киев - 11","Харьков - 3","Львов - 10","Днепропетровск - 2","Одесса - 2","Запорожье - 3","Донецк - 0"],
+                datasets : [
+                    {
+                        fillColor : "rgba(118, 35, 162, 0.2)",
+                        strokeColor : "#9900CC",
+                        pointColor : "#fff",
+                        pointStrokeColor : "#990066",
+                        data : [11,3,10,2,2,3,0]
+                    }
+                ]
+            }
+            new Chart(junjava).Line(junjavaData);
+        </script>
+
+        <!-- Круговая диаграмма -->
+        <canvas id="junjavacircle" width="200" height="100"></canvas>
+        <script>
+            var junjavacircle= document.getElementById("junjavacircle").getContext("2d");
+            var pieData = [
+                {
+                    value : 11,
+                    color : "#878BB6"
+                },
+                {
+                    value : 3,
+                    color : "#4ACAB4"
+                },
+                {
+                    value : 10,
+                    color : "#FF8153"
+                },
+                {
+                    value : 2,
+                    color : "#FF0033"
+                },
+                {
+                    value : 2,
+                    color : "#FFFF99"
+                },
+                {
+                    value : 3,
+                    color : "#99FF99"
+                },
+                {
+                    value : 0,
+                    color : "#003399"
+                }
+            ];
+            var pieOptions = {
+                segmentShowStroke : true,
+                animateScale : true
+            };
+            new Chart(junjavacircle).Pie(pieData, pieOptions);
+        </script>
+        <hr>
+    <p>Graphics, diagrams, histograms - Chart.js</p>
+    </body>
+</html>
