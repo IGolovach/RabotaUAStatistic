@@ -1,25 +1,23 @@
-header {
+header.describe {
       background-color:rgba(107, 45, 194, 0.4);
       top:0;
       box-shadow: 0 -1px 2px #111111;
       display:block;
       height:auto;
       left:0;
-      position:fixed;
       width:100%;
-      z-index:100;
+	  margin-bottom:3%;
   }
-  header p {
+  header.describe p {
       font-size:20px !important;
 	  position:relative;
-	  display:block;
-	  margin:20px 0 20px 0; 
+	  display:block; 
       font-family:tahoma;
       font-weight:normal;
 	  text-align:center;
       color:#990066;
   }
-  header a.stuts,a.stuts:visited{
+  header.describe a.stuts,a.stuts:visited{
       border:none;
       text-decoration:none;
       font-family:tahoma;
@@ -27,18 +25,21 @@ header {
       font-size:14px;
       line-height:31px;
   }
-  header a.stuts:hover {
+  header.describe a.stuts:hover {
     color:#fffb89;
   }
-  header .stuts span {
+  header.describe .stuts span {
       font-size:22px;
       font-weight:bold;
       margin-left:5px;
   }  
-  body {
-    margin-top: 150px;
+  *{
+    margin: 0px;
     text-align: center;
-  }	
+  }
+  article{ 
+	margin:3%;
+  }
   img{
 	height: 50px;
 }
